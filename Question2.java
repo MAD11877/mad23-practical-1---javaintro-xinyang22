@@ -4,13 +4,11 @@ public class Question2
 {
   public static void main(String[] args)
   {
-    /**
-     * Prompts user for height and weight, calculate and print out the BMI of the user
-     * 
-     * Hint: in.nextDouble() to read double
-     */
-     
-    Scanner in = new Scanner(System.in);
-    double height = in.nextDouble();
+   Console.Write("Enter your weight in kilograms: ");
+   double weight = Convert.ToDouble(Console.ReadLine());
+   Console.Write("Enter your height in meters: ");
+   double height = Convert.ToDouble(Console.ReadLine());
+   double bmi = weight / (height * height);
+   Console.WriteLine($"Your BMI is: {bmi:F2}");
   }
 }
