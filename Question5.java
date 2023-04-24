@@ -1,32 +1,33 @@
-import java.util.Scanner;
 
 public class Question5
 {
   public static void main(String[] args)
   {
-    /**
-     * Prompt the user for number. This input indicates the number of integers the user will be entering next. 
-     * Print out the mode (highest occurrence) from the set of integers. 
-     *    e.g.
-     *     > 5
-     *     > 2
-     *     > 4
-     *     > 1
-     *     > 3
-     *     > 4
-     *     4
-     * 
-     *    e.g.
-     *     > 4
-     *     > 2
-     *     > 2
-     *     > 3
-     *     > 3
-     *     2
-     * Hint: Use a loop to get input. Use another 2 loops to find the mode
-     */
-     
-    Scanner in = new Scanner(System.in);
+    
+Console.Write("Enter the number of integers to enter: ");
+int n1 = Convert.ToInt32(Console.ReadLine());
+
+
+
+List<int> numbers = new List<int>();
+for (int i = 0; i <n1; i++)
+{
+    Console.Write($"Enter integer {i + 1}: ");
+    int num = Convert.ToInt32(Console.ReadLine());
+    numbers.Add(num);
+}
+
+
+
+
+int mode = numbers.GroupBy(x => x)
+                  .OrderByDescending(x => x.Count())
+                  .Select(x => x.Key)
+                  .FirstOrDefault();
+
+
+Console.WriteLine($"The integer that occured the most is: {mode}");
+
     
   }
 }
